@@ -2,7 +2,7 @@
 ## What is allmyrc?
 allmyrc is a template for storing your rc files using Github pages. It lets you access your rc files from virtually any \*NIX operating system, granted they have curl or wget installed, and an internet connection.
 ## How does allmyrc work?
-By forking this repository and uploading your own rc files to the `rc/` folder, changing the values in `rc/index.html`, and `install`, you can then just get the install script from <your github pages url>/install and run it to load all your rc files into your home directory.
+By forking this repository and uploading your own rc files to the `rc/` folder, changing the values in `rc/index.html`, and `install`, you can then just get the install script from \<your github pages url\>/install (in this case, https://oleg-yurchenko.github.io/allmyrc/install) and run it to load all your rc files into your home directory.
 ## Any requirements for running `install`?
 Yes, allmyrc `install` script requires one of `curl` or `wget`. Make sure they are in your path as well. Of course, if you have some other tool you prefer, feel free to change the script.
 ## How do I upload my rc files?
