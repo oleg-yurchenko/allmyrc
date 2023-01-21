@@ -1,0 +1,28 @@
+#!/bin/sh
+rcsite='https://oleg-yurchenko.github.io/allmyrc/rc/';
+which -s curl;
+usecurl=$?;
+which -s wget
+usewget=$?;
+currdir=$(pwd);
+
+if [ ! $usecurl ] && [ ! $usewget ]
+then
+  echo 'Please install wget or curl and have them in your path to run installation';
+  exit;
+fi
+
+cd $HOME;
+files=$(curl -s $rcsite);
+echo 'Downloading rc files into' $HOME;
+for file in $files
+do
+  if [ $usecurl ]
+  then
+    curl -o $file $rcsite$file;
+  else
+    wget $rcsite$file;
+  fi
+done
+cd $currdir;
+echo 'Finished downloading rc files into' $HOME;
