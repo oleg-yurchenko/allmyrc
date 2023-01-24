@@ -13,7 +13,13 @@ then
 fi
 
 cd $HOME;
-files=$(curl -s $rcsite);
+if [ $usecurl ]
+then
+  files=$(curl -s $rcsite);
+else
+  files=$(wget -qO - $rcsite);
+fi
+
 echo 'Downloading rc files into' $HOME;
 for file in $files
 do
